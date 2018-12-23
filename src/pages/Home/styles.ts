@@ -54,7 +54,7 @@ export const PageCTA = Styled.div`
   }
 
   img {
-    color: ${COLORS.white};
+    filter: invert(1);
     height: ${FONT.heading2};
     width: ${FONT.heading2};
     display: inline-block;
@@ -73,5 +73,11 @@ export const PageCTA = Styled.div`
     position: absolute;
     right: ${SPACING.large};
     bottom: ${SPACING.large};
+
+    transition: all 0.15s ease-out;
+
+    &:hover {
+      transform: translateX(5px);
+    }
   }
 `;
