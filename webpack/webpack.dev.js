@@ -23,7 +23,7 @@ module.exports = {
   devtool: 'cheap-eval-source-map',
 
   devServer: {
-    headers: { "Access-Control-Allow-Origin": "*" },
+    disableHostCheck: true,
     hot: true,
     inline: true,
   },
