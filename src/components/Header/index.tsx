@@ -2,10 +2,18 @@ import React from 'react';
 
 import { Container } from 'Src/styles/common';
 
-const Header = () => (
-  <header>
-    <p>askhdajskd</p>
-  </header>
+import {
+  Header,
+} from './styles';
+
+import Logo from 'Src/assets/logo.svg';
+
+const HeaderComponent = () => (
+  <Header>
+    <Container>
+      <img src={Logo} />
+    </Container>
+  </Header>
 );
 
-export default Header;
+export default HeaderComponent;

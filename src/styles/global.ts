@@ -1,11 +1,12 @@
 import { createGlobalStyle } from 'styled-components';
 
-import { FONT, FONT_WEIGHT } from './theme';
+import { COLORS, FONT, FONT_WEIGHT } from './theme';
 
 export const GlobalStyle = createGlobalStyle`
   * {
     box-sizing: border-box;
     font-weight: ${FONT_WEIGHT.default};
+    color: ${COLORS.primary};
   }
 
   body {

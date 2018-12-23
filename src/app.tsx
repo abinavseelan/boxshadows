@@ -4,6 +4,8 @@ import { hot } from 'react-hot-loader';
 
 import HomePage from './pages/Home';
 
+import Header from 'Src/components/Header';
+
 import { GlobalStyle } from 'Src/styles/global';
 
 class App extends React.Component {
@@ -11,6 +13,7 @@ class App extends React.Component {
     return (
       <React.Fragment>
         <GlobalStyle />
+        <Header />
         <Router>
           <HomePage path='/' />
       </Router>
