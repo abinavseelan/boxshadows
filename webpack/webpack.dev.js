@@ -7,7 +7,11 @@ module.exports = {
   mode: 'development',
 
   entry: {
-    app: './src/app.tsx'
+    app: [
+      'react-hot-loader/patch',
+      'webpack/hot/dev-server',
+      './src/index.tsx'
+    ],
   },
 
   output: {
@@ -16,9 +20,10 @@ module.exports = {
     publicPath: '/',
   },
 
-  devtool: 'inline-source-map',
+  devtool: 'cheap-eval-source-map',
 
   devServer: {
+    headers: { "Access-Control-Allow-Origin": "*" },
     hot: true,
     inline: true,
   },
@@ -45,10 +50,18 @@ module.exports = {
         ],
         exclude: /node_modules/,
       },
+      {
+        test: /\.(png|jpg|jpeg|svg)(\?[a-z0-9]+)?$/,
+        loader: 'file-loader?name=img/[name].[ext]',
+      },
     ]
   },
 
   plugins: [
+    new webpack.DefinePlugin({
+      __DEV__: JSON.stringify(true),
+    }),
+    new webpack.NamedModulesPlugin(),
     new webpack.HotModuleReplacementPlugin(),
     new HTMLWebpackPlugin({
       template: './src/index.html',

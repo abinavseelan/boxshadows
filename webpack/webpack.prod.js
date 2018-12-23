@@ -23,6 +23,8 @@ module.exports = {
     publicPath: '/',
   },
 
+  devtool: 'cheap-eval-source-map',
+
   resolve: {
     extensions: ['.ts', '.tsx', '.js', '.json', '.d.ts'],
     alias: {
@@ -33,21 +35,31 @@ module.exports = {
   },
 
   module: {
-    rules: [{
-      test: /\.tsx?$/,
-      use: [{
-        loader: 'babel-loader',
+    rules: [
+      {
+        test: /\.tsx?$/,
+        use: [
+          {
+            loader: 'babel-loader',
+          },
+          {
+            loader: 'awesome-typescript-loader'
+          }
+        ],
+        exclude: /node_modules/,
       },
       {
-        loader: 'awesome-typescript-loader'
-      }
-      ],
-      exclude: /node_modules/,
-    },]
+        test: /\.(png|jpg|jpeg|svg)(\?[a-z0-9]+)?$/,
+        loader: 'file-loader?name=img/[name].[ext]',
+      },
+    ]
   },
 
   plugins: [
     ...extraPlugins,
+    new webpack.DefinePlugin({
+      __DEV__: JSON.stringify(false),
+    }),
     new HTMLWebpackPlugin({
       template: './src/index.html',
     }),
