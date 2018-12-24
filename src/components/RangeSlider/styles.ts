@@ -3,7 +3,7 @@ import Styled from 'styled-components';
 import { BORDER_RADIUS, COLORS, FONT, FONT_WEIGHT, SPACING } from 'Src/styles/theme';
 
 export const Container = Styled.div`
-  margin: ${SPACING.default} ${(props: { inline: boolean}) => `
+  margin: ${SPACING.large} ${(props: { inline: boolean}) => `
     ${props.inline ? SPACING.large : 0}
   `};
 

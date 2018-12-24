@@ -55,5 +55,7 @@ export const EditorControls = Styled.div`
 
   .row {
     display: flex;
+    justify-content: center;
+    align-items: center;
   }
 `;

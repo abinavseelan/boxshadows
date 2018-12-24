@@ -95,14 +95,6 @@ class BoxShadows extends React.Component<IBoxShadowProps, IBoxShadowState> {
               label='Blur'
               inline
             />
-
-            <ColorPicker
-              value={this.state.color}
-              label='Shadow Color'
-              name='color'
-              onChange={this.handleColorChange}
-              inline
-            />
           </div>
           <div className='row'>
             <RangeSlider
@@ -124,7 +116,16 @@ class BoxShadows extends React.Component<IBoxShadowProps, IBoxShadowState> {
               label='Spread'
               inline
             />
+          </div>
 
+          <div className='row'>
+            <ColorPicker
+              value={this.state.color}
+              label='Shadow Color'
+              name='color'
+              onChange={this.handleColorChange}
+              inline
+            />
             <ColorPicker
               value={this.state.previewColor}
               label='Box Color'
