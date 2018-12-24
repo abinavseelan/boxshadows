@@ -12,6 +12,7 @@ export const FONT_WEIGHT = {
 
 export const COLORS = {
   animationsTheme: '#E91E63',
+  background: '#eee',
   boxShadowTheme: '#673AB7',
   gradientsTheme: '#9C27B0',
   primary: '#253858',

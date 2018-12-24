@@ -14,3 +14,10 @@ export const Container = Styled.div`
     text-decoration: none;
   }
 `;
+
+export const FullWidthContainer = Styled.div`
+  position: relative;
+  width: 100vw;
+  left: 50%;
+  margin-left: -50vw;
+`;
