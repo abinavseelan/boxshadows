@@ -4,7 +4,7 @@ import { BORDER_RADIUS, COLORS, FONT, FONT_WEIGHT, SPACING } from 'Src/styles/th
 
 export const Container = Styled.div`
   margin: ${SPACING.default} ${(props: { inline: boolean}) => `
-    ${props.inline ? SPACING.medium : 0}
+    ${props.inline ? SPACING.large : 0}
   `};
 
   label {

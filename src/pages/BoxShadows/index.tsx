@@ -2,6 +2,7 @@ import React from 'react';
 
 import Svg from 'Src/components/Svg';
 import RangeSlider from 'Src/components/RangeSlider';
+import ColorPicker from 'Src/components/ColorPicker';
 
 import BoxShadowsIcon from 'Src/assets/box-shadows.svg';
 
@@ -19,7 +20,7 @@ class BoxShadows extends React.Component<IBoxShadowProps, IBoxShadowState> {
 
     this.state = {
       blur: 4,
-      color: 'rgba(0, 0, 0, 0.25)',
+      color: '#000',
       inset: false,
       offsetX: 0,
       offsetY: 4,
@@ -35,6 +36,13 @@ class BoxShadows extends React.Component<IBoxShadowProps, IBoxShadowState> {
     this.setState((prevState: IBoxShadowState) => ({
       ...prevState,
       [name]: value,
+    }));
+  }
+
+  public handleColorChange = (name: string, color: any) => {
+    this.setState((prevState: IBoxShadowState) => ({
+      ...prevState,
+      [name]: color.hex,
     }));
   }
 
@@ -87,6 +95,14 @@ class BoxShadows extends React.Component<IBoxShadowProps, IBoxShadowState> {
               label='Blur'
               inline
             />
+
+            <ColorPicker
+              value={this.state.color}
+              label='Shadow Color'
+              name='color'
+              onChange={this.handleColorChange}
+              inline
+            />
           </div>
           <div className='row'>
             <RangeSlider
@@ -106,6 +122,14 @@ class BoxShadows extends React.Component<IBoxShadowProps, IBoxShadowState> {
               value={this.state.spread}
               onChange={this.handleInputChange}
               label='Spread'
+              inline
+            />
+
+            <ColorPicker
+              value={this.state.previewColor}
+              label='Box Color'
+              name='previewColor'
+              onChange={this.handleColorChange}
               inline
             />
           </div>
