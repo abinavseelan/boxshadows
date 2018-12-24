@@ -8,10 +8,6 @@ export const HeroSection = Styled.section`
 
   margin: ${SPACING.large} 0;
 
-  div, img {
-    width: 50%;
-  }
-
   h1 {
     font-size: ${FONT.heading1};
     font-weight: ${FONT_WEIGHT.bold};
@@ -19,13 +15,8 @@ export const HeroSection = Styled.section`
   }
 
   h2 {
-    margin: ${SPACING.default} 0;
+    margin: ${SPACING.medium} 0;
     font-size: ${FONT.heading2};
-  }
-
-  img {
-    height: 300px;
-    width: auto;
   }
 `;
 
@@ -51,15 +42,7 @@ export const PageCTA = Styled.div`
     font-weight: ${FONT_WEIGHT.bold};
     margin: 0 ${SPACING.default};
     display: inline-block;
-  }
-
-  img {
-    filter: invert(1);
-    height: ${FONT.heading2};
-    width: ${FONT.heading2};
-    display: inline-block;
-    position: relative;
-    top: 6px;
+    vertical-align: bottom;
   }
 
   h3 {

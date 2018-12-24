@@ -51,9 +51,13 @@ module.exports = {
         exclude: /node_modules/,
       },
       {
-        test: /\.(png|jpg|jpeg|svg)(\?[a-z0-9]+)?$/,
+        test: /\.(png|jpg|jpeg)(\?[a-z0-9]+)?$/,
         loader: 'file-loader?name=img/[name].[ext]',
       },
+      {
+        test: /\.svg$/,
+        loader: 'svg-inline-loader'
+      }
     ]
   },
 

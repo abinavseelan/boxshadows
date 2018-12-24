@@ -5,10 +5,14 @@ import { IHomeProps, IHomeState } from './types';
 
 import { Container } from 'Src/styles/common';
 
+import Svg from 'Src/components/Svg';
+
 import {
   HeroSection,
   PageCTA,
 } from './styles';
+
+import { COLORS, FONT} from 'Src/styles/theme';
 
 import HeroImage from 'Src/assets/hero-image.svg';
 import RightArrow from 'Src/assets/right-arrow.svg';
@@ -47,22 +51,33 @@ class HomePage extends React.Component<IHomeProps, IHomeState> {
         <HeroSection>
           <div>
             <h1>No more trial and error</h1>
-            <h2>Easy presets and editors.</h2>
+            <h2>easy presets and editors.</h2>
           </div>
-          <img src={HeroImage} />
+          <Svg src={HeroImage} height='300px' />
         </HeroSection>
 
         {
           pages.map((page, index) => (
             <PageCTA key={index} color={page.themeColor}>
               <div className='heading'>
-                <img src={page.icon} />
+                <Svg
+                  src={page.icon}
+                  height={FONT.heading2}
+                  width={FONT.heading2}
+                  inline
+                  color={COLORS.white}
+                />
                 <h2>{page.title}</h2>
                 <h3>{page.subTitle}</h3>
               </div>
               <div className='btn'>
                 <Link to={page.link}>
-                  <img src={RightArrow} />
+                  <Svg
+                    src={RightArrow}
+                    height={FONT.heading2}
+                    width={FONT.heading2}
+                    color={COLORS.white}
+                  />
                 </Link>
               </div>
             </PageCTA>
