@@ -49,3 +49,11 @@ export const Preview = Styled.div`
       ${props.blur}px ${props.spread}px ${props.color};
   `}
 `;
+
+export const EditorControls = Styled.div`
+  margin: ${SPACING.xLarge} 0;
+
+  .row {
+    display: flex;
+  }
+`;
