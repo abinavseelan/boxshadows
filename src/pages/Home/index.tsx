@@ -58,29 +58,29 @@ class HomePage extends React.Component<IHomeProps, IHomeState> {
 
         {
           pages.map((page, index) => (
-            <PageCTA key={index} color={page.themeColor}>
-              <div className='heading'>
-                <Svg
-                  src={page.icon}
-                  height={FONT.heading2}
-                  width={FONT.heading2}
-                  inline
-                  color={COLORS.white}
-                />
-                <h2>{page.title}</h2>
-                <h3>{page.subTitle}</h3>
-              </div>
-              <div className='btn'>
-                <Link to={page.link}>
+            <Link to={page.link}>
+              <PageCTA key={index} color={page.themeColor}>
+                <div className='heading'>
                   <Svg
-                    src={RightArrow}
+                    src={page.icon}
                     height={FONT.heading2}
                     width={FONT.heading2}
+                    inline
                     color={COLORS.white}
                   />
-                </Link>
-              </div>
-            </PageCTA>
+                  <h2>{page.title}</h2>
+                  <h3>{page.subTitle}</h3>
+                </div>
+                <div className='btn'>
+                    <Svg
+                      src={RightArrow}
+                      height={FONT.heading2}
+                      width={FONT.heading2}
+                      color={COLORS.white}
+                    />
+                </div>
+              </PageCTA>
+            </Link>
           ))
         }
       </Container>

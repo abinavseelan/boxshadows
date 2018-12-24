@@ -8,4 +8,9 @@ export const Container = Styled.div`
   width: 1200px;
   margin: 0 auto;
   padding: 0 ${SPACING.default};
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
 `;

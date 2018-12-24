@@ -16,7 +16,7 @@ class App extends React.Component {
         <Header />
         <Router>
           <HomePage path='/' />
-      </Router>
+        </Router>
       </React.Fragment>
     );
   }

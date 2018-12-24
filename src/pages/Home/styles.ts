@@ -52,15 +52,18 @@ export const PageCTA = Styled.div`
     color: ${COLORS.white};
   }
 
+  &:hover {
+    cursor: pointer;
+    .btn {
+      transform: translateX(5px);
+    }
+  }
+
   .btn {
     position: absolute;
     right: ${SPACING.large};
     bottom: ${SPACING.large};
 
     transition: all 0.15s ease-out;
-
-    &:hover {
-      transform: translateX(5px);
-    }
   }
 `;
