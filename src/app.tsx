@@ -3,6 +3,7 @@ import { Router } from '@reach/router';
 import { hot } from 'react-hot-loader';
 
 import HomePage from './pages/Home';
+import BoxShadows from './pages/BoxShadows';
 
 import Header from 'Src/components/Header';
 
@@ -16,6 +17,7 @@ class App extends React.Component {
         <Header />
         <Router>
           <HomePage path='/' />
+          <BoxShadows path='/box-shadows' />
         </Router>
       </React.Fragment>
     );

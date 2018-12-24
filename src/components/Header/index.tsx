@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from '@reach/router';
 
 import { Container } from 'Src/styles/common';
 
@@ -15,12 +16,14 @@ import { COLORS } from 'Src/styles/theme';
 const HeaderComponent = () => (
   <Header>
     <Container>
-      <Svg
-        inline
-        width='120px'
-        src={Logo}
-        color={COLORS.primary}
-      />
+      <Link to='/'>
+        <Svg
+          inline
+          width='120px'
+          src={Logo}
+          color={COLORS.primary}
+        />
+      </Link>
     </Container>
   </Header>
 );

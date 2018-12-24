@@ -28,6 +28,7 @@ module.exports = {
     disableHostCheck: true,
     hot: true,
     inline: true,
+    historyApiFallback: true,
   },
 
   resolve: {

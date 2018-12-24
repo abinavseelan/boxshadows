@@ -1,0 +1,29 @@
+import Styled from 'styled-components';
+
+import { BORDER_RADIUS, COLORS, FONT, FONT_WEIGHT, SPACING } from 'Src/styles/theme';
+
+export const HeadingContainer = Styled.div`
+  margin: ${SPACING.large} 0;
+  padding-bottom: ${SPACING.default};
+
+  display: flex;
+
+  h1 {
+    font-size: ${FONT.heading2};
+    margin: 0 ${SPACING.default};
+    font-weight: ${FONT_WEIGHT.bold};
+  }
+
+  position: relative;
+
+  &:after {
+    position: absolute;
+    bottom: 0;
+    left: ${SPACING.medium};
+    height: 5px;
+    border-radius: ${BORDER_RADIUS.default};
+    width: 100px;
+    background-color: ${COLORS.boxShadowTheme};
+    content: ' ';
+  }
+`;

@@ -26,7 +26,7 @@ export const PageCTA = Styled.div`
   `}
 
   height: 200px;
-  margin: 90px ${SPACING.xLarge};
+  margin: 90px 0;
   padding: ${SPACING.default};
   position: relative;
 
@@ -55,7 +55,7 @@ export const PageCTA = Styled.div`
   &:hover {
     cursor: pointer;
     .btn {
-      transform: translateX(5px);
+      transform: translateX(10px);
     }
   }
 
