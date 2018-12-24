@@ -3,7 +3,7 @@ export interface IColorPickerProps {
   label: string;
   name: string;
   onChange: (name: string, color: any) => void;
-  inline: boolean;
+  inline?: boolean;
 }
 
 export interface IColorPickerState {

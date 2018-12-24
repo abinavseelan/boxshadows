@@ -47,7 +47,7 @@ class ColorPicker extends React.Component<IColorPickerProps, IColorPickerState> 
   }
 
   public render() {
-    const {value, label, inline} = this.props;
+    const {value, label, inline = false} = this.props;
 
     return (
       <Container inline={inline}>

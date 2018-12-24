@@ -3,6 +3,7 @@ import React from 'react';
 import Svg from 'Src/components/Svg';
 import RangeSlider from 'Src/components/RangeSlider';
 import ColorPicker from 'Src/components/ColorPicker';
+import Toggle from 'Src/components/Toggle';
 
 import BoxShadowsIcon from 'Src/assets/box-shadows.svg';
 
@@ -31,11 +32,11 @@ class BoxShadows extends React.Component<IBoxShadowProps, IBoxShadowState> {
 
   public handleInputChange = (e: React.SyntheticEvent) => {
     const { target } = e;
-    const { value, name } = target as HTMLInputElement;
+    const { value, name, type, checked } = target as HTMLInputElement;
 
     this.setState((prevState: IBoxShadowState) => ({
       ...prevState,
-      [name]: value,
+      [name]: type === 'checkbox' ? checked : value,
     }));
   }
 
@@ -132,6 +133,13 @@ class BoxShadows extends React.Component<IBoxShadowProps, IBoxShadowState> {
               name='previewColor'
               onChange={this.handleColorChange}
               inline
+            />
+            <Toggle
+              inline
+              name='inset'
+              value={this.state.inset}
+              label='Inset'
+              onChange={this.handleInputChange}
             />
           </div>
         </EditorControls>
