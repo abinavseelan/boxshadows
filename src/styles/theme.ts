@@ -3,6 +3,7 @@ export const FONT = {
   heading1: '48px',
   heading2: '36px',
   heading3: '24px',
+  regular: '16px',
 };
 
 export const FONT_WEIGHT = {

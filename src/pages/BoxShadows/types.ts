@@ -2,22 +2,15 @@ export interface IBoxShadowProps {
   path: string;
 }
 
-export interface IBoxShadowState {
+export interface IBoxShadowOptions {
   offsetX: number;
   offsetY: number;
   blur: number;
   spread: number;
   color: string;
-  previewColor: string;
   inset: boolean;
 }
 
-export interface IBoxShadowPreviewProps {
-  offsetX: number;
-  offsetY: number;
-  blur: number;
-  spread: number;
-  color: string;
+export interface IBoxShadowState extends IBoxShadowOptions {
   previewColor: string;
-  inset: boolean;
 }

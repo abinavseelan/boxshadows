@@ -7,15 +7,16 @@ import Toggle from 'Src/components/Toggle';
 
 import BoxShadowsIcon from 'Src/assets/box-shadows.svg';
 
-import { IBoxShadowProps, IBoxShadowState } from './types';
+import { IBoxShadowOptions, IBoxShadowProps, IBoxShadowState } from './types';
 
 import { Container, FullWidthContainer } from 'Src/styles/common';
 
 import { COLORS, FONT } from 'Src/styles/theme';
 
-import { EditorControls, HeadingContainer, Preview, PreviewSpace } from './styles';
+import { EditorControls, HeadingContainer, PreviewSpace } from './styles';
 
 import { parseInput, validateInput } from 'Src/utils/input';
+import Preview from 'Src/components/Preview';
 
 class BoxShadows extends React.Component<IBoxShadowProps, IBoxShadowState> {
   constructor(props: IBoxShadowProps) {
@@ -51,6 +52,10 @@ class BoxShadows extends React.Component<IBoxShadowProps, IBoxShadowState> {
   }
 
   public render() {
+    const {
+      previewColor,
+      ...boxShadowOptions
+    } = this.state;
     return (
       <Container>
         <HeadingContainer>
@@ -66,15 +71,11 @@ class BoxShadows extends React.Component<IBoxShadowProps, IBoxShadowState> {
 
         <FullWidthContainer>
           <PreviewSpace>
-            <Preview
-              offsetX={this.state.offsetX}
-              offsetY={this.state.offsetY}
-              previewColor={this.state.previewColor}
-              color={this.state.color}
-              blur={this.state.blur}
-              spread={this.state.spread}
-              inset={this.state.inset}
-            />
+             <Preview
+              editable
+              boxShadow={this.generateBoxShadow({ ...boxShadowOptions })}
+              backgroundColor={previewColor}
+             />
           </PreviewSpace>
         </FullWidthContainer>
 
@@ -141,6 +142,19 @@ class BoxShadows extends React.Component<IBoxShadowProps, IBoxShadowState> {
         </EditorControls>
       </Container>
     );
+  }
+
+  private generateBoxShadow = (options: IBoxShadowOptions) => {
+    const {
+      blur,
+      color,
+      inset,
+      offsetX,
+      offsetY,
+      spread,
+    } = options;
+
+    return `${inset ? 'inset' : ''} ${offsetX}px ${offsetY}px ${blur}px ${spread}px ${color}`;
   }
 }
 

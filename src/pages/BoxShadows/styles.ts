@@ -2,7 +2,6 @@ import Styled from 'styled-components';
 
 import { BORDER_RADIUS, COLORS, FONT, FONT_WEIGHT, SPACING } from 'Src/styles/theme';
 
-import { IBoxShadowPreviewProps } from './types';
 import { Label } from 'Src/styles/common';
 
 export const HeadingContainer = Styled.div`
@@ -38,17 +37,6 @@ export const PreviewSpace = Styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-`;
-
-export const Preview = Styled.div`
-  height: 350px;
-  width: 350px;
-  border-radius: ${BORDER_RADIUS.default};
-  ${(props: IBoxShadowPreviewProps) => `
-    background-color: ${props.previewColor || COLORS.boxShadowTheme};
-    box-shadow: ${props.inset ? 'inset' : ''} ${props.offsetX}px ${props.offsetY}px
-      ${props.blur}px ${props.spread}px ${props.color};
-  `}
 `;
 
 export const EditorControls = Styled.div`
