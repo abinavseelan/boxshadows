@@ -15,6 +15,8 @@ import { COLORS, FONT } from 'Src/styles/theme';
 
 import { EditorControls, HeadingContainer, Preview, PreviewSpace } from './styles';
 
+import { parseInput, validateInput } from 'Src/utils/input';
+
 class BoxShadows extends React.Component<IBoxShadowProps, IBoxShadowState> {
   constructor(props: IBoxShadowProps) {
     super(props);
@@ -32,12 +34,14 @@ class BoxShadows extends React.Component<IBoxShadowProps, IBoxShadowState> {
 
   public handleInputChange = (e: React.SyntheticEvent) => {
     const { target } = e;
-    const { value, name, type, checked } = target as HTMLInputElement;
+    const  { name } = target as HTMLInputElement;
 
-    this.setState((prevState: IBoxShadowState) => ({
-      ...prevState,
-      [name]: type === 'checkbox' ? checked : value,
-    }));
+    if (validateInput(target as HTMLInputElement)) {
+      this.setState((prevState: IBoxShadowState) => ({
+        ...prevState,
+        [name]: parseInput(target as HTMLInputElement),
+      }));
+    }
   }
 
   public handleColorChange = (name: string, color: any) => {

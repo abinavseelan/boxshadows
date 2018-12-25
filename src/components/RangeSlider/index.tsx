@@ -24,7 +24,14 @@ const RangeSlider = ({
         onChange={onChange}
       />
       <span className='value-indicator'>
-        {value}
+        <input
+          type='number'
+          name={name}
+          value={value}
+          onChange={onChange}
+          min={min}
+          max={max}
+        />
       </span>
     </div>
   </RangeSliderContainer>
