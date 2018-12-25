@@ -2,8 +2,6 @@ import Styled from 'styled-components';
 
 import { BORDER_RADIUS, COLORS, FONT, FONT_WEIGHT, SPACING } from 'Src/styles/theme';
 
-import { Label } from 'Src/styles/common';
-
 export const HeadingContainer = Styled.div`
   margin: ${SPACING.xLarge} 0;
   padding-bottom: ${SPACING.default};

@@ -17,6 +17,7 @@ export default class Preview extends React.PureComponent<IPreviewProps, IPreview
   }
 
   public onCopy = () => {
+    const { onCopy: onCopyCallback } = this.props;
     this.setState((state) => {
       if (!state.copied) {
         return { ...state, copied: true };
@@ -24,6 +25,9 @@ export default class Preview extends React.PureComponent<IPreviewProps, IPreview
       return state;
     }, () => {
       if (this.state.copied) {
+        if (typeof onCopyCallback === 'function') {
+          onCopyCallback();
+        }
         setTimeout(() => {
           this.setState({ copied: false });
         }, 1000);

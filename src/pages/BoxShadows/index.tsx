@@ -1,8 +1,9 @@
 import React from 'react';
 
-import Svg from 'Src/components/Svg';
-import RangeSlider from 'Src/components/RangeSlider';
 import ColorPicker from 'Src/components/ColorPicker';
+import Preview from 'Src/components/Preview';
+import RangeSlider from 'Src/components/RangeSlider';
+import Svg from 'Src/components/Svg';
 import Toggle from 'Src/components/Toggle';
 
 import BoxShadowsIcon from 'Src/assets/box-shadows.svg';
@@ -10,13 +11,10 @@ import BoxShadowsIcon from 'Src/assets/box-shadows.svg';
 import { IBoxShadowOptions, IBoxShadowProps, IBoxShadowState } from './types';
 
 import { Container, FullWidthContainer } from 'Src/styles/common';
-
 import { COLORS, FONT } from 'Src/styles/theme';
-
 import { EditorControls, HeadingContainer, PreviewSpace } from './styles';
 
 import { parseInput, validateInput } from 'Src/utils/input';
-import Preview from 'Src/components/Preview';
 
 class BoxShadows extends React.Component<IBoxShadowProps, IBoxShadowState> {
   constructor(props: IBoxShadowProps) {
@@ -75,6 +73,7 @@ class BoxShadows extends React.Component<IBoxShadowProps, IBoxShadowState> {
               editable
               boxShadow={this.generateBoxShadow({ ...boxShadowOptions })}
               backgroundColor={previewColor}
+              onCopy={this.copyToClipboard({ ...boxShadowOptions })}
              />
           </PreviewSpace>
         </FullWidthContainer>
@@ -155,6 +154,24 @@ class BoxShadows extends React.Component<IBoxShadowProps, IBoxShadowState> {
     } = options;
 
     return `${inset ? 'inset' : ''} ${offsetX}px ${offsetY}px ${blur}px ${spread}px ${color}`;
+  }
+
+  private copyToClipboard = (options: IBoxShadowOptions) => () => {
+    const boxShadow = `box-shadow: ${this.generateBoxShadow(options)};`;
+
+    /* Get the text field */
+    const element = document.createElement('INPUT') as HTMLInputElement;
+    element.style.height = '0';
+    element.style.position = 'absolute';
+    element.style.opacity = '0';
+    element.setAttribute('value', boxShadow);
+
+    document.body.appendChild(element);
+    element.select();
+
+    /* Copy the text inside the text field */
+    document.execCommand('copy');
+    document.body.removeChild(element);
   }
 }
 

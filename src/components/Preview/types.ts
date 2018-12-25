@@ -5,6 +5,8 @@ export interface IPreviewProps {
   editable?: boolean;
   height?: string;
   width?: string;
+  onCopy?: () => void;
+  onTweak?: () => void;
 }
 
 export interface IPreviewState {
