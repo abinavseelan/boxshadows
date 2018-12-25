@@ -20,8 +20,6 @@ import { parseInput, validateInput } from 'Src/utils/input';
 class BoxShadows extends React.Component<IBoxShadowProps, IBoxShadowState> {
   constructor(props: IBoxShadowProps) {
     super(props);
-    // 0 13px 27px -5px rgba(50,50,93,.25)
-
     this.state = {
       blur: 27,
       color: 'rgba(50,50,93,.25)',

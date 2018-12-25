@@ -5,7 +5,8 @@ import { BORDER_RADIUS, COLORS, FONT, FONT_WEIGHT, SPACING } from 'Src/styles/th
 export const Container = Styled.label`
   input[type='range'] {
     -webkit-appearance: none;
-    width: 300px;
+    min-width: 200px;
+    width: calc(100% - 75px);
     height: 5px;
     background-color: ${COLORS.background};
     border-radius: ${BORDER_RADIUS.default};
@@ -21,6 +22,15 @@ export const Container = Styled.label`
       background-color: ${COLORS.boxShadowTheme};
       cursor: pointer;
     }
+
+    @media screen and (min-width: 480px) {
+      width: 300px;
+    }
+  }
+
+  .controls-container {
+    display: flex;
+    align-items: center;
   }
 
   .value-indicator {
@@ -36,7 +46,8 @@ export const Container = Styled.label`
 
     &:after {
       position: absolute;
-      top: 12px;
+      top: 50%;
+      transform: translateY(-50%);
       left: -7px;
       width: 0;
       height: 0;

@@ -3,6 +3,7 @@ import Styled from 'styled-components';
 import { BORDER_RADIUS, COLORS, FONT, FONT_WEIGHT, SPACING } from 'Src/styles/theme';
 
 import { IBoxShadowPreviewProps } from './types';
+import { Label } from 'Src/styles/common';
 
 export const HeadingContainer = Styled.div`
   margin: ${SPACING.xLarge} 0;
@@ -55,7 +56,12 @@ export const EditorControls = Styled.div`
 
   .row {
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
+    flex-wrap: wrap;
+
+    label {
+      margin: ${SPACING.medium} 0;
+    }
   }
 `;

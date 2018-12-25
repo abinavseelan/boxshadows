@@ -3,7 +3,7 @@ import React from 'react';
 import { IToggleProps } from './types';
 
 import { Container } from './styles';
-import { LabelText } from '../Label';
+import { LabelText } from 'Src/styles/common';
 
 class Toggle extends React.Component<IToggleProps> {
   public render() {

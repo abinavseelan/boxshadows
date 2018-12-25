@@ -15,7 +15,7 @@ const RangeSlider = ({
 }: IRangeSliderProps) => (
   <RangeSliderContainer>
     <LabelText>{label}</LabelText>
-    <div>
+    <div className='controls-container'>
       <input
         type='range'
         name={name}

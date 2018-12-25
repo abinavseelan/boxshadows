@@ -19,10 +19,12 @@ class App extends React.Component {
         <GlobalStyle />
         <Favicon url={favicon} />
         <Header />
-        <Router>
-          <HomePage path='/' />
-          <BoxShadows path='/box-shadows' />
-        </Router>
+        <main>
+          <Router>
+            <HomePage path='/' />
+            <BoxShadows path='/box-shadows' />
+          </Router>
+        </main>
       </React.Fragment>
     );
   }
