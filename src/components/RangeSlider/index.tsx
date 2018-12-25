@@ -2,7 +2,7 @@ import React from 'react';
 
 import { IRangeSliderProps } from './types';
 
-import { Container } from './styles';
+import { Container as RangeSliderContainer } from './styles';
 
 const RangeSlider = ({
   value,
@@ -11,10 +11,9 @@ const RangeSlider = ({
   min,
   max,
   label,
-  inline = false,
 }: IRangeSliderProps) => (
-  <Container inline={inline}>
-    <label>{label}</label>
+  <RangeSliderContainer>
+    <span className='label-text'>{label}</span>
     <div>
       <input
         type='range'
@@ -24,11 +23,11 @@ const RangeSlider = ({
         value={value}
         onChange={onChange}
       />
-      <span>
+      <span className='value-indicator'>
         {value}
       </span>
     </div>
-  </Container>
+  </RangeSliderContainer>
 );
 
 export default RangeSlider;

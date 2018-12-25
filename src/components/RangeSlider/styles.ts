@@ -2,13 +2,10 @@ import Styled from 'styled-components';
 
 import { BORDER_RADIUS, COLORS, FONT, FONT_WEIGHT, SPACING } from 'Src/styles/theme';
 
-export const Container = Styled.div`
-  margin: ${SPACING.large} ${(props: { inline: boolean}) => `
-    ${props.inline ? SPACING.large : 0}
-  `};
-
-  label {
+export const Container = Styled.label`
+  .label-text {
     font-size: ${FONT.heading3};
+    display: inline-block;
   }
 
   input[type='range'] {
@@ -31,7 +28,7 @@ export const Container = Styled.div`
     }
   }
 
-  span {
+  .value-indicator {
     display: inline-block;
     position: relative;
     width: 60px;

@@ -4,6 +4,5 @@ export interface IRangeSliderProps {
   min: number;
   max: number;
   label?: string;
-  inline?: boolean;
   onChange: (e: React.SyntheticEvent) => void;
 }

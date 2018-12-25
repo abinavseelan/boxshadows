@@ -84,7 +84,6 @@ class BoxShadows extends React.Component<IBoxShadowProps, IBoxShadowState> {
               value={this.state.offsetX}
               onChange={this.handleInputChange}
               label='Horizontal Length'
-              inline
             />
 
             <RangeSlider
@@ -94,7 +93,6 @@ class BoxShadows extends React.Component<IBoxShadowProps, IBoxShadowState> {
               value={this.state.blur}
               onChange={this.handleInputChange}
               label='Blur'
-              inline
             />
           </div>
           <div className='row'>
@@ -105,7 +103,6 @@ class BoxShadows extends React.Component<IBoxShadowProps, IBoxShadowState> {
               value={this.state.offsetY}
               onChange={this.handleInputChange}
               label='Vertical Length'
-              inline
             />
 
             <RangeSlider
@@ -115,7 +112,6 @@ class BoxShadows extends React.Component<IBoxShadowProps, IBoxShadowState> {
               value={this.state.spread}
               onChange={this.handleInputChange}
               label='Spread'
-              inline
             />
           </div>
 
