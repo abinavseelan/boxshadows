@@ -46,7 +46,7 @@ export default class Preview extends React.PureComponent<IPreviewProps, IPreview
         <Copied
           copied={copied}
         >
-          Hot! 🔥
+          Hot damn! 🔥
         </Copied>
         <div className='controls'>
           <span className='copy' onClick={this.onCopy}>

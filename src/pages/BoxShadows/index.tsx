@@ -70,7 +70,6 @@ class BoxShadows extends React.Component<IBoxShadowProps, IBoxShadowState> {
         <FullWidthContainer>
           <PreviewSpace>
              <Preview
-              editable
               boxShadow={this.generateBoxShadow({ ...boxShadowOptions })}
               backgroundColor={previewColor}
               onCopy={this.copyToClipboard({ ...boxShadowOptions })}
