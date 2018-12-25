@@ -1,39 +1,25 @@
 import Styled from 'styled-components';
 
 import { BORDER_RADIUS, COLORS, FONT, SPACING } from 'Src/styles/theme';
+import { LabelText } from '../Label';
 
-export const Container = Styled.div`
-  margin: ${SPACING.large} ${(props: { inline: boolean }) => `
-    ${props.inline ? SPACING.large : 0}
-  `};
-
+export const Container = Styled.label`
   display: flex;
   justify-content: center;
   align-items: center;
-  position: relative;
+  cursor: pointer;
 
-  label {
-    font-size: ${FONT.heading3};
+  ${LabelText} {
     margin-left: ${SPACING.default};
   }
 
   input[type='checkbox'] {
-    position: absolute;
-    cursor: pointer;
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    width: 100%;
     height: 25px;
     opacity: 0;
 
-    &:checked {
-      ~.toggle {
-        .switch {
-          transform: translateX(20px);
-        }
-      }
+    &:checked ~.toggle .switch {
+      transform: translateX(20px);
+      background-color: ${COLORS.boxShadowTheme};
     }
   }
 
@@ -52,7 +38,7 @@ export const Container = Styled.div`
     height: 15px;
     width: 15px;
     border-radius: ${BORDER_RADIUS.rounded};
-    background-color: ${COLORS.boxShadowTheme};
+    background-color: ${COLORS.alternateBackground};
 
     transition: all 0.15s ease-out;
     transform: translateX(0);

@@ -125,17 +125,14 @@ class BoxShadows extends React.Component<IBoxShadowProps, IBoxShadowState> {
               label='Shadow Color'
               name='color'
               onChange={this.handleColorChange}
-              inline
             />
             <ColorPicker
               value={this.state.previewColor}
               label='Box Color'
               name='previewColor'
               onChange={this.handleColorChange}
-              inline
             />
             <Toggle
-              inline
               name='inset'
               value={this.state.inset}
               label='Inset'

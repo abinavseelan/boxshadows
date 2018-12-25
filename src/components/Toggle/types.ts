@@ -3,5 +3,4 @@ export interface IToggleProps {
   name: string;
   value: boolean;
   onChange: (e: React.SyntheticEvent) => void;
-  inline?: boolean;
 }

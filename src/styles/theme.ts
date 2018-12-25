@@ -11,6 +11,7 @@ export const FONT_WEIGHT = {
 };
 
 export const COLORS = {
+  alternateBackground: '#ccc',
   animationsTheme: '#E91E63',
   background: '#eee',
   boxShadowTheme: '#673AB7',
