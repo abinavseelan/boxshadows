@@ -20,15 +20,16 @@ import { parseInput, validateInput } from 'Src/utils/input';
 class BoxShadows extends React.Component<IBoxShadowProps, IBoxShadowState> {
   constructor(props: IBoxShadowProps) {
     super(props);
+    // 0 13px 27px -5px rgba(50,50,93,.25)
 
     this.state = {
-      blur: 4,
-      color: '#000',
+      blur: 27,
+      color: 'rgba(50,50,93,.25)',
       inset: false,
       offsetX: 0,
-      offsetY: 4,
-      previewColor: COLORS.boxShadowTheme,
-      spread: 0,
+      offsetY: 13,
+      previewColor: COLORS.white,
+      spread: -5,
     };
   }
 
@@ -82,7 +83,7 @@ class BoxShadows extends React.Component<IBoxShadowProps, IBoxShadowState> {
         <EditorControls>
           <div className='row'>
             <RangeSlider
-              min={0}
+              min={-200}
               max={200}
               name='offsetX'
               value={this.state.offsetX}
@@ -92,7 +93,7 @@ class BoxShadows extends React.Component<IBoxShadowProps, IBoxShadowState> {
 
             <RangeSlider
               min={0}
-              max={40}
+              max={200}
               name='blur'
               value={this.state.blur}
               onChange={this.handleInputChange}
@@ -101,7 +102,7 @@ class BoxShadows extends React.Component<IBoxShadowProps, IBoxShadowState> {
           </div>
           <div className='row'>
             <RangeSlider
-              min={0}
+              min={-200}
               max={200}
               name='offsetY'
               value={this.state.offsetY}

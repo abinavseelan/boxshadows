@@ -3,7 +3,7 @@ import React from 'react';
 import { IRangeSliderProps } from './types';
 
 import { Container as RangeSliderContainer } from './styles';
-import { LabelText } from 'Src/components/Label';
+import { LabelText } from 'Src/styles/common';
 
 const RangeSlider = ({
   value,

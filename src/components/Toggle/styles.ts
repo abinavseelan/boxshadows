@@ -1,7 +1,7 @@
 import Styled from 'styled-components';
 
 import { BORDER_RADIUS, COLORS, FONT, SPACING } from 'Src/styles/theme';
-import { LabelText } from '../Label';
+import { LabelText } from 'Src/styles/common';
 
 export const Container = Styled.label`
   display: flex;
