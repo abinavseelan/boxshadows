@@ -3,11 +3,6 @@ import Styled from 'styled-components';
 import { BORDER_RADIUS, COLORS, FONT, FONT_WEIGHT, SPACING } from 'Src/styles/theme';
 
 export const Container = Styled.label`
-  .label-text {
-    font-size: ${FONT.heading3};
-    display: inline-block;
-  }
-
   input[type='range'] {
     -webkit-appearance: none;
     width: 300px;

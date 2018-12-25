@@ -8,6 +8,7 @@ import {
   Container,
   PickerContainer,
 } from './styles';
+import { LabelText } from 'Src/components/Label';
 
 class ColorPicker extends React.Component<IColorPickerProps, IColorPickerState> {
   private colorPicker: React.RefObject<HTMLDivElement>;
@@ -50,8 +51,8 @@ class ColorPicker extends React.Component<IColorPickerProps, IColorPickerState> 
     const {value, label, inline = false} = this.props;
 
     return (
-      <Container inline={inline}>
-        <ColorPreview color={value} onClick={this.togglePicker}>
+      <Container onClick={this.togglePicker}>
+        <ColorPreview color={value}>
           <PickerContainer open={this.state.open} ref={this.colorPicker}>
             <SketchPicker
               width={250}
@@ -60,7 +61,7 @@ class ColorPicker extends React.Component<IColorPickerProps, IColorPickerState> 
             />
           </PickerContainer>
         </ColorPreview>
-        <label>{label}</label>
+        <LabelText>{label}</LabelText>
       </Container>
     );
   }

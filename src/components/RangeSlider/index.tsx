@@ -3,6 +3,7 @@ import React from 'react';
 import { IRangeSliderProps } from './types';
 
 import { Container as RangeSliderContainer } from './styles';
+import { LabelText } from 'Src/components/Label';
 
 const RangeSlider = ({
   value,
@@ -13,7 +14,7 @@ const RangeSlider = ({
   label,
 }: IRangeSliderProps) => (
   <RangeSliderContainer>
-    <span className='label-text'>{label}</span>
+    <LabelText>{label}</LabelText>
     <div>
       <input
         type='range'
