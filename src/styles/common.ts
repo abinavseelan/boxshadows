@@ -31,3 +31,17 @@ const labelStyles = css`
 
 export const Label = Styled.label`${labelStyles}`;
 export const LabelText = Styled.span`${labelStyles}`;
+
+export const PresetsGrid = Styled.div`
+  display: flex;
+  flex-wrap: wrap;
+
+  .col {
+    padding: ${SPACING.large};
+    text-align: center;
+
+    h2 {
+      margin: ${SPACING.large} 0;
+    }
+  }
+`;

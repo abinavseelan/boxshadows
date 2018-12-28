@@ -17,7 +17,7 @@ export default class Preview extends React.PureComponent<IPreviewProps, IPreview
   }
 
   public onCopy = () => {
-    const { onCopy: onCopyCallback } = this.props;
+    const { copyHandler: onCopyCallback } = this.props;
     this.setState((state) => {
       if (!state.copied) {
         return { ...state, copied: true };
@@ -53,7 +53,7 @@ export default class Preview extends React.PureComponent<IPreviewProps, IPreview
             Copy CSS
           </span>
             {editable
-              ? (<span className='edit'>Tweak</span>)
+              ? (<span className='edit' onClick={this.props.editHandler}>Tweak</span>)
               : null
             }
         </div>

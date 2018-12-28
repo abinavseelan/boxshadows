@@ -10,11 +10,13 @@ import BoxShadowsIcon from 'Src/assets/box-shadows.svg';
 
 import { IBoxShadowOptions, IBoxShadowProps, IBoxShadowState } from './types';
 
-import { Container, FullWidthContainer } from 'Src/styles/common';
+import { Container, FullWidthContainer, PresetsGrid } from 'Src/styles/common';
 import { COLORS, FONT } from 'Src/styles/theme';
 import { EditorControls, HeadingContainer, PreviewSpace } from './styles';
 
 import { parseInput, validateInput } from 'Src/utils/input';
+
+import { BoxShadowPresets as presets, IBoxShadowPresets } from 'Src/presets/boxShadows';
 
 class BoxShadows extends React.Component<IBoxShadowProps, IBoxShadowState> {
   constructor(props: IBoxShadowProps) {
@@ -72,7 +74,7 @@ class BoxShadows extends React.Component<IBoxShadowProps, IBoxShadowState> {
              <Preview
               boxShadow={this.generateBoxShadow({ ...boxShadowOptions })}
               backgroundColor={previewColor}
-              onCopy={this.copyToClipboard({ ...boxShadowOptions })}
+              copyHandler={this.copyToClipboard({ ...boxShadowOptions })}
              />
           </PreviewSpace>
         </FullWidthContainer>
@@ -138,6 +140,24 @@ class BoxShadows extends React.Component<IBoxShadowProps, IBoxShadowState> {
             />
           </div>
         </EditorControls>
+        <PresetsGrid>
+          {
+            presets.map((preset) => (
+              <div className='col' key={preset.title}>
+                <Preview
+                  boxShadow={this.generateBoxShadow({ ...preset })}
+                  backgroundColor={COLORS.background}
+                  copyHandler={this.copyToClipboard({ ...preset })}
+                  editHandler={this.tweakPreset({ ...preset })}
+                  height='300px'
+                  width='300px'
+                  editable
+                />
+                <h2>{preset.title}</h2>
+              </div>
+            ))
+          }
+        </PresetsGrid>
       </Container>
     );
   }
@@ -153,6 +173,33 @@ class BoxShadows extends React.Component<IBoxShadowProps, IBoxShadowState> {
     } = options;
 
     return `${inset ? 'inset' : ''} ${offsetX}px ${offsetY}px ${blur}px ${spread}px ${color}`;
+  }
+
+  private tweakPreset = (preset: IBoxShadowPresets) => () => {
+    const {
+      blur,
+      offsetX,
+      offsetY,
+      inset,
+      spread,
+      color,
+    } = preset;
+
+    this.setState((prevState: IBoxShadowState) => ({
+      ...prevState,
+      blur,
+      color,
+      inset,
+      offsetX,
+      offsetY,
+      spread,
+    }), () => {
+      window.scrollTo({
+        behavior: 'smooth',
+        left: 0,
+        top: 0,
+      });
+    });
   }
 
   private copyToClipboard = (options: IBoxShadowOptions) => () => {

@@ -1,8 +1,8 @@
 export const FONT = {
   base: '12px',
   heading1: '48px',
-  heading2: '36px',
-  heading3: '24px',
+  heading2: '24px',
+  heading3: '18px',
   regular: '16px',
 };
 
