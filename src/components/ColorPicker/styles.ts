@@ -21,6 +21,7 @@ export const Container = Styled.label`
     margin-right: 8px;
   }
 
+  z-index: 999;
   cursor: pointer;
 `;
 
